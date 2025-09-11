@@ -1,0 +1,65 @@
+/* Reset ค่าเบื้องต้น */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar ul {
+  list-style: none;
+  background: #333;
+  display: flex;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  background: #444;
+}
+
+/* ซ่อน dropdown ก่อน */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #555;
+  min-width: 180px;
+}
+
+.dropdown li a {
+  padding: 12px 15px;
+}
+
+/* โชว์ dropdown เวลา hover */
+.navbar ul li:hover .dropdown {
+  display: block;
+}
+summary {
+  list-style: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+summary:hover {
+  background: #444;
+}
