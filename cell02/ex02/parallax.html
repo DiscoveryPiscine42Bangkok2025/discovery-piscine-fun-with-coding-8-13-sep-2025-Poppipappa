@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parallax Page</title>
+  <style>
+    body, html {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .parallax {
+      height: 100vh; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .img1 {
+      background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20250205/pngtree-soft-pastel-floral-design-light-blue-background-image_16896113.jpg');
+    }
+
+    .img2 {
+      background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20250205/pngtree-soft-pastel-floral-design-light-blue-background-image_16896113.jpg');
+    }
+
+    .content {
+      height: 50vh;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="parallax img1">
+    <div class="text">Welcome to My Parallax Page</div>
+  </div>
+
+  
+  <div class="content">
+    <h2>This is the middle section</h2>
+    <p> It's nice to meet you.</p>
+  </div>
+
+  
+  <div class="parallax img2">
+    <div class="text">Thanks for visiting!</div>
+  </div>
+</body>
+</html>
