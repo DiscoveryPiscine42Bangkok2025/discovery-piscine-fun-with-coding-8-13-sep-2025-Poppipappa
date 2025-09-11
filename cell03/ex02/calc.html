@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Calculator</title>
+</head>
+<body>
+  <!-- ช่องกรอกตัวเลขซ้าย -->
+  <input type="text" id="left" placeholder="Left number">
+
+  <!-- ตัวเลือก operator -->
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+
+  <!-- ช่องกรอกตัวเลขขวา -->
+  <input type="text" id="right" placeholder="Right number">
+
+  <!-- ปุ่ม -->
+  <input type="submit" value="Try me!" onclick="calculate()">
+
+  <script>
+    function calculate() {
+      const left = document.getElementById("left").value;
+      const right = document.getElementById("right").value;
+      const op = document.getElementById("operator").value;
+
+      // ตรวจสอบว่าเป็นจำนวนเต็มบวกหรือไม่
+      if (!/^\d+$/.test(left) || !/^\d+$/.test(right)) {
+        alert("Error :(");
+        return;
+      }
+
+      const numLeft = parseInt(left);
+      const numRight = parseInt(right);
+      let result;
+
+      // ตรวจสอบการหารด้วยศูนย์
+      if ((op === "/" || op === "%") && numRight === 0) {
+        alert("It’s over 9000!");
+        console.log("It’s over 9000!");
+        return;
+      }
+
+      // คำนวณตาม operator
+      switch (op) {
+        case "+": result = numLeft + numRight; break;
+        case "-": result = numLeft - numRight; break;
+        case "*": result = numLeft * numRight; break;
+        case "/": result = numLeft / numRight; break;
+        case "%": result = numLeft % numRight; break;
+      }
+
+      // แสดงผลลัพธ์
+      alert(result);
+      console.log(result);
+    }
+
+    // ทุก 30 วินาทีให้ขึ้น alert
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+</body>
+</html>
